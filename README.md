@@ -5,8 +5,8 @@ View the [Wiki for assignment requirements](https://github.com/sealin-co/COSC-31
 
 This file (Readme) should explain:
 
-what the project is about, 
+1) what the project is about, 
 
-how to compile and run the code.
+2) how to compile and run the code.
 
-how the classes are organized, use a README.doc or README.pdf rather than a txt file.
+3) how the classes are organized, use a README.doc or README.pdf rather than a txt file.
