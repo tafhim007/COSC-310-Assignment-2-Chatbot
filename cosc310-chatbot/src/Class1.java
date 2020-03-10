@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Class1 {
-	//global vars
+	//global variables
 	static Scanner s = new Scanner(System.in);  
 	static String userInput;
 	
@@ -13,16 +13,14 @@ public class Class1 {
 		    // Read user input
 		    userInput = s.nextLine();  
 		    userInput.toLowerCase();
-		    //1) if valid => greet user 2) else repeat				   		    		 
-		    greetResponse(userInput); //func checks if input is valid
 		    
-		    //respond to the user
-		   
-		    
+		    //1) if valid => greet user 2) else repeat until valid input				   		    		 
+		    greetResponse(userInput); //function checks if input is valid or not
+		    		   		    
 		}		
 	
 		public static void defaultResponse() {
-			//defaults
+			//default messages
 		    String [] defaultMessage = new String [] {"Uh, what?", "Try be more accurate", "I'm sorry", 
 		    											"Would you mind repeating?", "I don't get you",
 		    											"I'm programmed to answer few questions. Please be more accurate",
@@ -46,7 +44,5 @@ public class Class1 {
 		    }
 			    System.out.println("How are you feeling today?");
 		    	userInput = s.nextLine();  
-		}
-		
-		
+		}		
 }
