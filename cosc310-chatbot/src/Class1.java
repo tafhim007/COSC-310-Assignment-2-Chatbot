@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Class1 {
@@ -11,21 +13,20 @@ public class Class1 {
 	    answer.toLowerCase();
 	    
 	    //possible greetings from user
-	    String [] greetArray = new String []{"hi", "hi there", "hello"};
+	    String [] greetArray = new String []{"hi", "hi there", "hello", "good morning", "good evening",
+	    									"good afternoon", "good day"};
 	    //convert array to a list
-	    	
-	    if(answer.equals("hi")) {
-	    	System.out.println("Is this ongoing?");	 
+	    List<String> greetList = Arrays.asList(greetArray);	
+	    
+	    //respond to the user
+	    if(greetList.contains(answer)) {
+	    	System.out.println("How are you feeling today?");	 
 	    	answer = s.nextLine();  
 	    }
-	    else if(answer.equals("happy")){
-	    	System.out.println("That's great!");
-	    }
 	    else {
-	    	//base case
-	    	System.out.println("I am not sure what you said?");
+	    	System.out.println("Hi");
+	    }
 	    }
 	    
 	}
 
-}
