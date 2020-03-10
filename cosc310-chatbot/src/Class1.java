@@ -14,7 +14,7 @@ public class Class1 {
 	    
 	    //possible greetings from user
 	    String [] greetArray = new String []{"hi", "hi there", "hello", "good morning", "good evening",
-	    									"good afternoon", "good day"};
+	    									"good afternoon", "good day", "hey"};
 	    //convert array to a list
 	    List<String> greetList = Arrays.asList(greetArray);	
 	    
@@ -24,7 +24,8 @@ public class Class1 {
 	    	answer = s.nextLine();  
 	    }
 	    else {
-	    	System.out.println("Hi");
+	    	System.out.println("I didn't understand you, let's try again.");
+	    	System.out.println("Hi there!");
 	    }
 	    }
 	    
