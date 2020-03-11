@@ -6,8 +6,14 @@ public class Class1 {
 	//global variables
 	static Scanner s = new Scanner(System.in);  
 	static String userInput;
+	static String userName;
+	static String happyOrSad;
 	static int userAge;
 	static String doesSmoke;
+	static String userEmotion;
+	static String [] greetArray = new String []{"hi", "hi there", "hello", "good morning", "good evening",
+				"good afternoon", "good day", "hey", "hey there"};
+	static List<String> greetList = Arrays.asList(greetArray);		 
 	
 	public static void main(String[] args) {
 			// Create a Scanner object
@@ -15,10 +21,11 @@ public class Class1 {
 		    // Read user input
 		    userInput = s.nextLine();  
 		    userInput.toLowerCase();
+		    greetResponse(userInput);
 		    
 		    //1) if valid => greet user 2) else repeat until valid input				   		    		 
-		    String userName = greetResponse(userInput); //function checks if input is valid or not
-		    startConversation(userName);		   		    
+//		    String userName = greetResponse(userInput); //function checks if input is valid or not
+//		    startConversation(userName);		   		    
 		}		
 	
 		public static void defaultResponse() {
@@ -36,36 +43,43 @@ public class Class1 {
 	    
 		}
 		
-		public static String greetResponse(String input) {			
+		public static void greetResponse(String input) {			
 		    //possible greetings from user
-		    String [] greetArray = new String []{"hi", "hi there", "hello", "good morning", "good evening",
-		    									"good afternoon", "good day", "hey", "hey there"};
-
-		    List<String> greetList = Arrays.asList(greetArray);		   
-		    
+	    
 		    while(!greetList.contains(input)) {
 		    	defaultResponse();
 		    	input = s.nextLine(); 
 		    }
 			    System.out.println("What's your name?");
-		    	return userInput = s.nextLine();  
+		    	userName = s.nextLine();  
+		    	startConversation(userName);
 		}
 		
 		public static void startConversation(String name) {
 			//main conversation starts here => happy guy
-			System.out.println("Do you feel happy today, " + name + " (Y/N)?");
-			userInput = s.nextLine();
-			userInput.toLowerCase();
-			if(userInput.contains("yes")) {
-				ageQuestion();
-			}								
-			else {
-				//call the sad function
-				sadConvo();
-			}
-				
+			System.out.println("How do you feel today, " + name + " (Happy/Sad)?");			
+			happyOrSad = s.nextLine();
+			happyOrSad.toLowerCase();
+			checkEmotion(happyOrSad);
+			
 		}		
 		
+		public static void checkEmotion(String userInput2) {
+			if(happyOrSad.contains("happy")) {
+				System.out.println("Glad you are happy");
+				ageQuestion();
+			}
+			else if(userInput.contains("sad")){
+				System.out.println("Oh no");
+				ageQuestion();
+			}
+			else {
+				defaultResponse();
+				startConversation(userName);
+			}
+			
+		}
+
 		public static void ageQuestion() {
 			System.out.println("Glad you are here. What's your age?");
 			userAge = s.nextInt();	
@@ -92,19 +106,30 @@ public class Class1 {
 		}
 		
 		public static void smoke() {
-			System.out.println("Smoke?");
+			System.out.println("Do you smoke?");
 			userInput = s.next();
 			if(userInput.contains("yes")) {
-				System.out.println("Just say no.");
+				System.out.println("Okay.");
+				System.out.println("Smoking only aggreviates your depression. But that's no problem.");								
+				talkAboutProblem();
 			}								
 			else {
-				System.out.println("Good job!");
+				System.out.println("That's great to hear.");
+				System.out.println("Smoking is not healthy.");
+				talkAboutProblem();
+				
 			}
 
 		}
 		
-		
-		
+		public static void talkAboutProblem() {			
+			
+			System.out.println("Is there anything bothering you today?");
+			
+			
+			
+		}
+
 		public static void sadConvo() {
 			//sid's part
 			
