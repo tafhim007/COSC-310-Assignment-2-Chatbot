@@ -50,7 +50,12 @@ public class Class1 {
 		}
 		
 		public static void startConversation(String name) {
-			//method initiates the conversation
+			//main conversation starts here
 			System.out.println("How are you feeling today, " + name + "?");
+			userInput = s.nextLine();
+			if(userInput.contains("good"))
+				System.out.println("Glad you are here.");
+			else
+				System.out.println("Oh no, what's your age?");
 		}
 }
