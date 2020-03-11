@@ -56,6 +56,8 @@ public class Class1 {
 			    System.out.println("What's your name?");
 		    	userName = s.nextLine();  
 		    	startConversation(userName);
+		    	
+		    	
 		}
 		
 		public static void startConversation(String name) {
@@ -129,12 +131,12 @@ public class Class1 {
 			System.out.println("How many times a week do you get excercise? Enter a number");			
 			numExcercise = s.nextInt();
 			
-			if(numExcercise < 1) {
+			if(numExcercise< 3) {
 				System.out.println("Try excercising at least 3 times a week.");
 				sleepHours();
 			}
-			else if(numExcercise>3) {
-				System.out.println("Good job! Keep it up!");
+			else {
+				System.out.println("Good job!");
 				sleepHours();
 			}
 		}
@@ -144,7 +146,7 @@ public class Class1 {
 			sleepHours = s.nextInt();
 			
 			if(sleepHours > 6) {
-				System.out.println("Great! You are getting goof amount of sleep.");
+				System.out.println("Great! You are getting good amount of sleep.");
 			}
 			else if(sleepHours<=4) {
 				System.out.println("Son you need to sleep more. At least six hours minimum");
@@ -157,6 +159,8 @@ public class Class1 {
 		public static void generateReport() {
 			System.out.println("Report");			
 		}
+		
+		
 
 		public static void sadConvo() {
 			//sid's part
