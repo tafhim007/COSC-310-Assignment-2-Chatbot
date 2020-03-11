@@ -6,6 +6,8 @@ public class Class1 {
 	//global variables
 	static Scanner s = new Scanner(System.in);  
 	static String userInput;
+	static int userAge;
+	static String doesSmoke;
 	
 	public static void main(String[] args) {
 			// Create a Scanner object
@@ -50,12 +52,62 @@ public class Class1 {
 		}
 		
 		public static void startConversation(String name) {
-			//main conversation starts here
-			System.out.println("How are you feeling today, " + name + "?");
+			//main conversation starts here => happy guy
+			System.out.println("Do you feel happy today, " + name + " (Y/N)?");
 			userInput = s.nextLine();
-			if(userInput.contains("good"))
-				System.out.println("Glad you are here.");
-			else
-				System.out.println("Oh no, what's your age?");
+			userInput.toLowerCase();
+			if(userInput.contains("yes")) {
+				ageQuestion();
+			}								
+			else {
+				//call the sad function
+				sadConvo();
+			}
+				
+		}		
+		
+		public static void ageQuestion() {
+			System.out.println("Glad you are here. What's your age?");
+			userAge = s.nextInt();	
+			
+			if(isBetween(userAge, 0,18)) {
+				System.out.println("Hey there! I'm assuming you don't smoke.");				
+			}
+			else if(isBetween(userAge, 18,26)){
+				System.out.println("Oh cool!");
+				smoke();
+			}
+			else if(isBetween(userAge, 27,40)){
+				System.out.println("Good to know.");
+				smoke();
+			}
+			else {
+				System.out.println("Great!");
+				smoke();
+			}
 		}
+		
+		public static boolean isBetween(int userAge2, int lowerBound, int upperBound) {
+			return lowerBound <=userAge2 && userAge2 <= upperBound;
+		}
+		
+		public static void smoke() {
+			System.out.println("Smoke?");
+			userInput = s.next();
+			if(userInput.contains("yes")) {
+				System.out.println("Just say no.");
+			}								
+			else {
+				System.out.println("Good job!");
+			}
+
+		}
+		
+		
+		
+		public static void sadConvo() {
+			//sid's part
+			
+		}
+		
 }
