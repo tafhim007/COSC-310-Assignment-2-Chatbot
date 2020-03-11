@@ -11,6 +11,7 @@ public class Class1 {
 	static int userAge;
 	static String doesSmoke;
 	static String userEmotion;
+	static int numExcercise;
 	static String [] greetArray = new String []{"hi", "hi there", "hello", "good morning", "good evening",
 				"good afternoon", "good day", "hey", "hey there"};
 	static List<String> greetList = Arrays.asList(greetArray);		 
@@ -69,7 +70,7 @@ public class Class1 {
 				System.out.println("Glad you are happy");
 				ageQuestion();
 			}
-			else if(userInput.contains("sad")){
+			else if(happyOrSad.contains("sad")){
 				System.out.println("Oh no");
 				ageQuestion();
 			}
@@ -81,7 +82,7 @@ public class Class1 {
 		}
 
 		public static void ageQuestion() {
-			System.out.println("Glad you are here. What's your age?");
+			System.out.println("What's your age?");
 			userAge = s.nextInt();	
 			
 			if(isBetween(userAge, 0,18)) {
@@ -111,22 +112,31 @@ public class Class1 {
 			if(userInput.contains("yes")) {
 				System.out.println("Okay.");
 				System.out.println("Smoking only aggreviates your depression. But that's no problem.");								
-				talkAboutProblem();
+				getExcercise();
 			}								
 			else {
 				System.out.println("That's great to hear.");
 				System.out.println("Smoking is not healthy.");
-				talkAboutProblem();
+				getExcercise();
 				
 			}
 
 		}
 		
-		public static void talkAboutProblem() {			
-			
-			System.out.println("Is there anything bothering you today?");
-			
-			
+		public static void getExcercise() {						
+			System.out.println("How many times a week do you get excercise?");			
+			try{
+				numExcercise = s.nextInt();
+			}
+			catch (Exception e) {
+			    System.out.println("Input is not number");
+			}
+				
+				
+		}
+
+		public static void generateReport() {
+			System.out.println("Report");
 			
 		}
 
