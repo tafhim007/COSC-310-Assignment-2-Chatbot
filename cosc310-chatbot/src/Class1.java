@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class Class1 {
 	//global variables
 	static Scanner s = new Scanner(System.in);  
@@ -12,6 +13,7 @@ public class Class1 {
 	static String doesSmoke;
 	static String userEmotion;
 	static int numExcercise;
+	static int sleepHours;
 	static String [] greetArray = new String []{"hi", "hi there", "hello", "good morning", "good evening",
 				"good afternoon", "good day", "hey", "hey there"};
 	static List<String> greetList = Arrays.asList(greetArray);		 
@@ -124,20 +126,36 @@ public class Class1 {
 		}
 		
 		public static void getExcercise() {						
-			System.out.println("How many times a week do you get excercise?");			
-			try{
-				numExcercise = s.nextInt();
+			System.out.println("How many times a week do you get excercise? Enter a number");			
+			numExcercise = s.nextInt();
+			
+			if(numExcercise < 1) {
+				System.out.println("Try excercising at least 3 times a week.");
+				sleepHours();
 			}
-			catch (Exception e) {
-			    System.out.println("Input is not number");
+			else if(numExcercise>3) {
+				System.out.println("Good job! Keep it up!");
+				sleepHours();
 			}
-				
-				
+		}
+		
+		public static void sleepHours() {						
+			System.out.println("How many hours a week do you sleep? Enter a number");			
+			sleepHours = s.nextInt();
+			
+			if(sleepHours > 6) {
+				System.out.println("Great! You are getting goof amount of sleep.");
+			}
+			else if(sleepHours<=4) {
+				System.out.println("Son you need to sleep more. At least six hours minimum");
+			}
+			else {
+				System.out.println("Are you suffering from insomnia?");
+			}
 		}
 
 		public static void generateReport() {
-			System.out.println("Report");
-			
+			System.out.println("Report");			
 		}
 
 		public static void sadConvo() {
