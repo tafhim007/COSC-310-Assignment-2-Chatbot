@@ -5,25 +5,26 @@ import java.util.Scanner;
 
 public class Class1 {
 	//global variables
-	static Scanner s = new Scanner(System.in);  
-	static String userInput;
-	static String userName;
-	static String happyOrSad;
-	static int userAge;
-	static String doesSmoke;
-	static String userEmotion;
-	static String isExcercise;
-	static int numExcercise;
-	static int sleepHours;
-	static String continueChat;
-	static String seekedCounselling;
-	static String userRecommendation; //final
-	static String userRecommendationTwo;
-	static String [] greetArray = new String []{"hi", "hi there", "hello", "good morning", "good evening",
-				"good afternoon", "good day", "hey", "hey there"};
-	static List<String> greetList = Arrays.asList(greetArray);		 
-	
-	public static void main(String[] args) {
+		static Scanner s = new Scanner(System.in);  
+		static String userInput;
+		static String userName;
+		static String happyOrSad;
+		static int userAge;
+		static String doesSmoke;
+		static String userEmotion;
+		static int numExcercise;
+		static String excerciseFeels;
+		static int sleepHours;
+		static String continueChat;
+		static String userRecommendation; //final
+		static String userRecommendationTwo;
+		static String userRecommendationThree;
+		static String userRecommendationFour;
+		static String [] greetArray = new String []{"hi", "hi there", "hello", "good morning", "good evening",
+					"good afternoon", "good day", "hey", "hey there"};
+		static List<String> greetList = Arrays.asList(greetArray);		 
+		
+		public static void main(String[] args) {
 			// Create a Scanner object
 		    System.out.println("Hello");
 		    // Read user input
@@ -58,7 +59,7 @@ public class Class1 {
 		    	defaultResponse();
 		    	input = s.nextLine(); 
 		    }
-			    System.out.println("What's your name?");
+			    System.out.println("Let me get to know you better. What's your name?");
 		    	userName = s.nextLine();  
 		    	startConversation(userName);
 		    	
@@ -67,42 +68,10 @@ public class Class1 {
 		
 		public static void startConversation(String name) {
 			//main conversation starts here => happy guy
-			System.out.println("How do you feel today, " + name + " (Happy/Sad)?");	
-			happyOrSad = s.nextLine();
-			happyOrSad.toLowerCase();
-			checkEmotion(happyOrSad);
-			
-		}		
-		
-		public static void checkEmotion(String userInput2) {
-			if(happyOrSad.contains("happy")) {
-				System.out.println("Glad you are happy today.");
-				counselling();				
-			}
-			else if(happyOrSad.contains("sad")){
-				System.out.println("Oh no");
-				counselling();
-			}
-			else {
-				defaultResponse();
-				startConversation(userName);
-			}			
-			
+			System.out.println("It's so nice to meet you " + name + "! I'm Richard Hendricks.");
+			ageQuestion();
 		}
 		
-		public static void counselling() {
-			System.out.println("Have you seeked counselling before?");
-			seekedCounselling = s.nextLine();
-			seekedCounselling.toLowerCase();
-			if(seekedCounselling.contains("yes")) {
-				ageQuestion();
-			}
-			else {
-				System.out.println("No problem");
-				ageQuestion();
-			}
-		}
-
 		public static void ageQuestion() {
 			System.out.println("What's your age?");
 			userAge = s.nextInt();	
@@ -112,16 +81,37 @@ public class Class1 {
 			}
 			else if(isBetween(userAge, 18,26)){
 				System.out.println("Oh cool!");
-				smoke();
+				checkEmotion();
 			}
 			else if(isBetween(userAge, 27,40)){
 				System.out.println("Good to know.");
-				smoke();
+				checkEmotion();
 			}
 			else {
 				System.out.println("Great!");
+				checkEmotion();
+			}
+		}
+		
+		public static void checkEmotion() {
+			System.out.println(
+					"I'm only 20 days old. Now that we know each other a bit better, how are you doing today? Are you feeling happy or sad? ");
+			happyOrSad = s.next();
+			happyOrSad.toLowerCase();
+			if(happyOrSad.contains("happy")) {
+				System.out.println("That's great! I'm so glad you're having a great day.");
+				smoke();				
+			}
+			else if(happyOrSad.contains("sad")){
+				System.out.println("Oh no I'm so sorry. :/ Let me see if I can help you in any way by asking you a few questions.");
+				System.out.println("Please bear with me.");
 				smoke();
 			}
+			else {
+				defaultResponse();
+				startConversation(userName);
+			}			
+			
 		}
 		
 		public static boolean isBetween(int userAge2, int lowerBound, int upperBound) {
@@ -129,22 +119,26 @@ public class Class1 {
 		}
 		
 		public static void smoke() {
-			System.out.println("Do you smoke?");
+			System.out.println("Let me get to know about your habits a little better. Do you smoke?");
 			userInput = s.next();
 			if(userInput.contains("yes")) {
-				System.out.println("Okay.");
-				System.out.println("Smoking only aggreviates your depression. But that's no problem.");								
+				System.out.println("Uhm alright. I would recommend you to try and stop smoking as it is very bad for health.");
+				smokingHazards();
 				drink();
 			}								
 			else {
-				System.out.println("That's great to hear.");
-				System.out.println("Smoking is not healthy.");
+				System.out.println("That's great to hear! I'm really happy because smoking has some very bad effects on your health.");
+				System.out.println("I'm glad you are avoiding it.");
 				drink();
 				
 			}
-
 		}
-		public static void drink() {
+		
+		private static void smokingHazards(){
+			System.out.println("Smoking is not healthy at all. It's a major cause of lung cancer. Furthermore it increases your blood pressure making your health much worse than a non smoker.");
+		}
+
+			public static void drink() {
 			System.out.println("Do you drink?");
 			userInput = s.next();
 			if(userInput.contains("yes")) {
@@ -159,48 +153,48 @@ public class Class1 {
 				
 			}
 
-		}				
+		}	
 		
-		//Do you feel healthy?
 		public static void getExcercise() {		
-			System.out.println("Do you excercise? (Y/N)");
-			isExcercise = s.next();
-			isExcercise.toLowerCase();
+			System.out.println("How do you feel about excercising?");
+			excerciseFeels = s.next();
+			System.out.println("Now how many times a week do you get excercise? Enter a number");			
+			numExcercise = s.nextInt();
 			
-			if(isExcercise.contains("yes")) {				
-				System.out.println("How many times a week do you get excercise? Enter a number");			
-				numExcercise = s.nextInt();
-				if(numExcercise< 3) {
-					System.out.println("Try excercising at least 3 times a week.");
-					sleepHours();
-				}
-				else {
-					System.out.println("Good job!");
-					sleepHours();
-				}
+			if(numExcercise< 3) {
+				System.out.println("Well I would suggest you to try excercising at least 3 times a week. " + exBenefits());
+				sleepHours();
 			}
 			else {
-				System.out.println("Excercise is vital to your mental health. Try excercising over weekends.");
-			}		
-			
+				System.out.println("Good job! " + exBenefits());
+				sleepHours();
+			}
+		}
+		
+		private static String exBenefits() {
+			return "It is great for your health body and mind therefore may result you to be generally happier.";
 		}
 		
 		public static void sleepHours() {						
-			System.out.println("How many hours a day do you sleep? Enter a number");			
+			System.out.println("How many hours a week do you sleep? Enter a number");			
 			sleepHours = s.nextInt();
 			
 			if(sleepHours > 6) {
-				System.out.println("Great! You are getting good amount of sleep.");		
-				recommendation();
-			}			
-			else {
-				System.out.println("Not sleeping for 16 hours straight decreases your performence as much as if your blood "
-						+ "alchohol level were 0.05.");
-				System.out.println("The legal limit is 0.08%");
-				recommendation();
+				System.out.println("Great! You are getting good amount of sleep then.");
+				sleepBenefits();				
+			}
+			else{
+				System.out.println("Son you need to sleep more. Atleast 6 hours of sleep is benificial to you in various ways.");
+				sleepBenefits();
 			}
 		}
 		
+		private static void sleepBenefits() {
+			System.out.println("Good amount of sleep keeps your heart healthy. It reduces stress, reduces inflamation, makes you more alert, improves your memory and has many more benefits.");
+		}
+		
+		
+		//add this later
 		public static void recommendation() {
 			System.out.println("I have a few questions for you.");
 			System.out.println("Do you think I have been helpful?");
@@ -209,9 +203,9 @@ public class Class1 {
 			System.out.println("I am still in training, is there any recommendation you have for me?");
 			userRecommendationTwo = s.next();
 			System.out.println("Would you recommend this chatbot to a friend?");
-			userRecommendationTwo = s.next();
+			userRecommendationThree = s.next();
+			System.out.println("How do you feel now? (Happy/Sad)");
+			userRecommendationFour = s.next();
 			System.out.println("Thanks for your review. Appreciate your feedback.");
 		}
-
-			
-}
+}	
