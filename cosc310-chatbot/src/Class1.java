@@ -14,6 +14,9 @@ public class Class1 {
 	static String userEmotion;
 	static int numExcercise;
 	static int sleepHours;
+	static String continueChat;
+	static String userRecommendation; //final
+	static String userRecommendationTwo;
 	static String [] greetArray = new String []{"hi", "hi there", "hello", "good morning", "good evening",
 				"good afternoon", "good day", "hey", "hey there"};
 	static List<String> greetList = Arrays.asList(greetArray);		 
@@ -72,7 +75,7 @@ public class Class1 {
 		public static void checkEmotion(String userInput2) {
 			if(happyOrSad.contains("happy")) {
 				System.out.println("Glad you are happy");
-				ageQuestion();
+				ageQuestion();				
 			}
 			else if(happyOrSad.contains("sad")){
 				System.out.println("Oh no");
@@ -81,7 +84,7 @@ public class Class1 {
 			else {
 				defaultResponse();
 				startConversation(userName);
-			}
+			}			
 			
 		}
 
@@ -155,16 +158,18 @@ public class Class1 {
 				System.out.println("Are you suffering from insomnia?");
 			}
 		}
-
-		public static void generateReport() {
-			System.out.println("Report");			
+		
+		public static void recommendation() {						
+			System.out.println("Do you think I have been helpful?");
+			userRecommendation = s.next();
+			System.out.println("Sure. One final question");
+			System.out.println("I am still in training, is there any recommendation you have for me?");
+			userRecommendationTwo = s.next();
+			System.out.println("Thankyou! Your response has been recorded.");
 		}
-		
-		
 
 		public static void sadConvo() {
 			//sid's part
 			
-		}
-		
+		}		
 }
