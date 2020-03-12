@@ -11,6 +11,7 @@ public class Class1 {
 		static String happyOrSad;
 		static int userAge;
 		static String doesSmoke;
+		static int numCigarettes;
 		static String userEmotion;
 		static int numExcercise;
 		static String excerciseFeels;
@@ -122,15 +123,24 @@ public class Class1 {
 			System.out.println("Let me get to know about your habits a little better. Do you smoke?");
 			userInput = s.next();
 			if(userInput.contains("yes")) {
-				System.out.println("Uhm alright. I would recommend you to try and stop smoking as it is very bad for health.");
-				smokingHazards();
-				drink();
-			}								
+				System.out.println("How many cigarettes do you smoke in a day?");
+				numCigarettes = s.nextInt();
+				if(numCigarettes > 5) {
+					System.out.println("Uhm alright. I would recommend you to try and stop smoking as it is very bad for health.");
+					smokingHazards();
+					drink();
+				}								
+				else {
+					System.out.println("Try nicotine patches if you want to give up smoking.");		
+					smokingHazards();
+					drink();
+				}
+				
+			}
 			else {
 				System.out.println("That's great to hear! I'm really happy because smoking has some very bad effects on your health.");
 				System.out.println("I'm glad you are avoiding it.");
 				drink();
-				
 			}
 		}
 		
@@ -143,7 +153,7 @@ public class Class1 {
 			userInput = s.next();
 			if(userInput.contains("yes")) {
 				System.out.println("Okay.");
-				System.out.println("Drinking only aggreviates your depression. But that's no problem.");								
+				System.out.println("Drinking only aggreviates your depression.");								
 				getExcercise();
 			}								
 			else {
@@ -184,7 +194,7 @@ public class Class1 {
 				sleepBenefits();				
 			}
 			else{
-				System.out.println("Son you need to sleep more. Atleast 6 hours of sleep is benificial to you in various ways.");
+				System.out.println("You need to sleep more. Atleast 6 hours of sleep is benificial to you in various ways.");
 				sleepBenefits();
 			}
 		}
