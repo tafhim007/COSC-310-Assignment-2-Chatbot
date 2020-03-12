@@ -192,7 +192,7 @@ public class Class1 {
 		}
 		
 		public static void sleepHours() {						
-			System.out.println("How many hours a week do you sleep? Please enter a number for me " + userName + ".");			
+			System.out.println("How many hours a day do you sleep? Please enter a number for me " + userName + ".");			
 			sleepHours = s.nextInt();
 			
 			if(sleepHours > 6) {
