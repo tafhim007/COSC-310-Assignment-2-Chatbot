@@ -83,7 +83,8 @@ public class Class1 {
 			userAge = s.nextInt();	
 			
 			if(isBetween(userAge, 0,18)) {
-				System.out.println("Hey there! I'm assuming you don't smoke.");				
+				System.out.println("Hey there!.");				
+				checkEmotion();
 			}
 			else if(isBetween(userAge, 18,26)){
 				System.out.println("Oh cool!");
@@ -311,12 +312,12 @@ public class Class1 {
 		
 		public static void recommendation() {
 			System.out.println("I have a few questions for you " + userName + ".");
-			System.out.println("Do you think I have been helpful?");
+			System.out.println("Do you think I have been helpful? (Y/N)");
 			userRecommendation = s.next();
 			System.out.println("Sure noted. I will be sure to further improve on that, thank you for your feedback.");
-			System.out.println("I am still in training though, so is there any recommendation you have for me?");
+			System.out.println("I am still in training though, so is there any recommendation you have for me? One word");
 			userRecommendationTwo = s.next();
-			System.out.println("Noted. Would you recommend this chatbot to a friend?");
+			System.out.println("Noted. Would you recommend this chatbot to a friend? (Y/N)");
 			userRecommendationThree = s.next();
 			System.out.println("Alright " + userName + ". Lastly, checking back on you I wanna know how do you feel right now? (Happy/Sad)");
 			userRecommendationFour = s.next();
