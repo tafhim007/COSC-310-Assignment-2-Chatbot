@@ -32,7 +32,7 @@ public class Class1 {
 	
 	public static void main(String[] args) {
 			// Create a Scanner object
-		    System.out.println("Hello");
+		    System.out.println("Hey there! My name is Theratalk and I am therapy chat bot");
 		    // Read user input
 		    userInput = s.nextLine();  
 		    userInput.toLowerCase();
