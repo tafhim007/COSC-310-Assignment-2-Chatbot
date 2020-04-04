@@ -32,15 +32,11 @@ public class Class1 {
 	
 	public static void main(String[] args) {
 			// Create a Scanner object
-		    System.out.println("Hey there! My name is Theratalk and I am therapy chat bot");
+		    System.out.println("Hey there!");
 		    // Read user input
 		    userInput = s.nextLine();  
 		    userInput.toLowerCase();
-		    greetResponse(userInput);
-		    
-		    //1) if valid => greet user 2) else repeat until valid input				   		    		 
-//		    String userName = greetResponse(userInput); //function checks if input is valid or not
-//		    startConversation(userName);		   		    
+		    greetResponse(userInput);	   		    
 		}		
 	
 		public static void defaultResponse() {
@@ -74,7 +70,7 @@ public class Class1 {
 		
 		public static void startConversation(String name) {
 			//main conversation starts here => happy guy
-			System.out.println("It's so nice to meet you " + name + "! I'm Richard Hendricks.");
+			System.out.println("It's so nice to meet you " + name + "! I'm Theratalk and I am therapy chat bot");
 			ageQuestion();
 		}
 		
