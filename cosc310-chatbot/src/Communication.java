@@ -1,3 +1,4 @@
+// Add an extra topic to your agent's repertoire. Ensure this topic has similarities with the original topic. 
 import java.util.Scanner;
 
 public class Communication {
