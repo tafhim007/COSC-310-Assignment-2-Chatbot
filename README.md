@@ -7,4 +7,4 @@ View the [Wiki for assignment requirements](https://github.com/sealin-co/COSC-31
 
 How to Run?
 
-Clone/Download the project and open the project in Eclipse. Run Class1.java file 
+Clone/Download the project and open the project in Eclipse. Run MainProgram.java file 
