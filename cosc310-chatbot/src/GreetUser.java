@@ -23,7 +23,7 @@ public class GreetUser {
 	    System.out.println(defaultMessage[randomNum]);
 	}
 	
-	public static void startGreetings() {
+	public void startGreetings() {
 		String greetInput;		
 		System.out.println("Hi there! My name is TheraTalk and I am a therapy chat bot.");
 		System.out.println("How is your day going?");
@@ -45,7 +45,7 @@ public class GreetUser {
 	}
 		   
 	
-	public static void chooseTopic(String name) {
+	public void chooseTopic(String name) {
 		String topicString;
 		String mentalHealth = "mental health";
 		String communication = "communication";
