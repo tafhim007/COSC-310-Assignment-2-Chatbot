@@ -54,6 +54,23 @@ public class Class1 {
 	    
 		}
 		
+		public static void chooseTopic() {
+			String topicString;
+			String mentalHealth = "mental health";
+			String communication = "communication";
+			System.out.println("What do you need help with today? Choose one topic from the following: mental health or communication");
+			topicString = s.next();
+			//eval the input
+			while(topicString.equalsIgnoreCase(mentalHealth)||topicString.equalsIgnoreCase(communication)) {
+				System.out.println("Thanks for choosing. Your request will now be proccessed.");
+				
+				
+			}
+			
+			System.out.println("Please choose between mental health or communication");
+			topicString = s.next();		
+		}
+		
 		public static void greetResponse(String input) {			
 		    //possible greetings from user
 	    
@@ -63,10 +80,10 @@ public class Class1 {
 		    }
 			    System.out.println("Let me get to know you better. What's your name?");
 		    	userName = s.nextLine();  
-		    	startConversation(userName);
-		    	
-		    	
+		    	startConversation(userName);		    	    
 		}
+		
+		
 		
 		public static void startConversation(String name) {
 			//main conversation starts here => happy guy
