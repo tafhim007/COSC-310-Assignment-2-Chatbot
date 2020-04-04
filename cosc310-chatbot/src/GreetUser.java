@@ -47,13 +47,20 @@ public class GreetUser {
 	
 	public void chooseTopic(String name) {
 		String topicString;
-		String mentalHealth = "mental health";
-		String communication = "communication";
-		System.out.println(name+ ", what do you need help with today? Choose one topic from the following: mental health or communication");
+		String mentalHealth = "mh";
+		String communication = "c";
+		System.out.println(name+ ", what do you need help with today? Type mh for mental health or c for communication");
 		topicString = s.next();
 		//evaluate the input
 		while(!(topicString.equalsIgnoreCase(mentalHealth)||topicString.equalsIgnoreCase(communication))) {			
-			System.out.println("Please choose between mental health or communication");
+			//Add a feature that enables your agent to give at least 5 different reasonable responses when the user enters something outside the two topics.
+			String [] differentResponses = {"Choose between mental health (type mh) or communication (type c)",
+											"I am currently only trained for help with mental health (type mh) or communication (type c)",
+											"I wish I could answer other topics but currently I can help you with mental health (type mh) or communication (type c)",
+											"More topics coming soon but for now you can only choose between mental health (type mh) or communication (type c)",
+											"I have been only trained for mental health (type mh) or communication (type c)"};
+			int random = (int) (Math.random()*5);
+			System.out.println(differentResponses[random]);
 			topicString = s.next();	
 		}
 			System.out.println("Thanks for choosing. Your request will now be proccessed.");	
