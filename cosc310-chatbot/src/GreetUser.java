@@ -9,7 +9,7 @@ public class GreetUser {
 	static List<String> greetList = Arrays.asList(greetArray);	
 	static String userName;
 	
-	public static void defaultResponse() {
+	public static String defaultResponse() {
 		//default messages
 	    String [] defaultMessage = new String [] {"Uh, what?", "Try be more accurate", "I'm sorry", 
 	    											"Would you mind repeating?", "I don't get you",
@@ -20,7 +20,7 @@ public class GreetUser {
 	    											"Let's try that again"
 	    											};
 	    int randomNum = (int) (Math.random()*10);
-	    System.out.println(defaultMessage[randomNum]);
+	    return defaultMessage[randomNum];
 	}
 	
 	public void startGreetings() {
@@ -38,7 +38,7 @@ public class GreetUser {
 	    	userName = s.next();
 	    	chooseTopic(userName);
 	    }
-	    }
+}
 	
 	 public String getName() {
 		    return userName;
